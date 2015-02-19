@@ -1,0 +1,34 @@
+*{
+	margin:0;
+	padding:0;
+}
+body {
+	background: url('../img/fondo.png');
+	background-repeat: no-repeat;
+}
+#contenedor {
+	width:1200px;
+	height:700px;
+	margin:0 auto;
+	border:1px solid white;
+}
+#encabezado {
+	height:100px;
+	border: 1px solid white;
+	
+}
+#titulo {
+	background-image: url('../img/midas.png');
+	height:50px;
+	width:350px;
+}
+#cuerpo {
+	height:600px;
+	border:1px solid green;
+}
+#pie {
+	height:20px;
+	border:1px solid red;
+	text-align: center;
+	color:white;
+}
