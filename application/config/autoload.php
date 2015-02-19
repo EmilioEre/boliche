@@ -109,7 +109,7 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array('proyecto_modelo');
+$autoload['model'] = array('boliche_modelo');
 
 
 /* End of file autoload.php */
