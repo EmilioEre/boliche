@@ -42,9 +42,40 @@ class Boliche extends CI_Controller {
 	}
 	public function contacto()
 	{
-		$this->load->view('contacto');
+	
+			//estoy por insertar
+			$datos=array(
+			'asunto'=>'',
+			'alerta'=>'',
+			);
+		if($_POST)
+		{
+			//estoy por insertar
+			$datos=array(
+			'asunto'=>$this->input->post('asunto'),
+			'mensaje'=>$this->input->post('mensaje'),
+			'fecha'=>date('d-m-Y'),
+			
+			);
+			//valido la informacion antes de insertar
+			$this->form_validation->set_rules('asunto','Asunto','required');
+			$this->form_validation->set_rules('mensaje','Mensaje','required');
+			if ($this->form_validation->run()===FALSE)
+			{
+			//se produce un error y vuelve a cargar contacto para avisarle al usuario que complete los campos
+			$datos['alerta']="ERROR DEBE COMPLETAR LOS CAMPOS";
+			}
+			else
+			{
+				//como ya tomamos los datos que manda el usuario lo insertamos
+			$this->boliche_modelo->insertarcontacto($datos);
+			$datos['alerta']="SU MENSAJE SE ENVIO SATISFACTORIAMENTE";
+			}
+			
+		}
+		$this->load->view('contacto',$datos);
 	}
-	public function login()
+	public function login() 
 	{
 		$this->load->view('login');
 	}

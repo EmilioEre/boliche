@@ -1,0 +1,17 @@
+fieldset{
+	width:400px;
+}
+body{
+	color:white;
+}
+#contenedor{
+	margin:0 auto;
+	
+}
+legend{
+	width:250px;
+	text-align:center;
+}
+span{
+	color:yellow;
+}
