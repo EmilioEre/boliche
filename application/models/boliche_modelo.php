@@ -38,4 +38,9 @@ class Boliche_modelo extends CI_Model {
 		//funcion que buscara un usuario y devolvera su informacion
 		
 	}
+	public function insertarfoto ($informacion)
+	{
+		//funcion que inserta una foto de un usuario en la tabla contacto
+		$this->db->insert('foto',$informacion);
+	}
 }

@@ -25,6 +25,25 @@
 			?></span> 
 			
 			</form>
+			 <?php
+			 if(isset($activar))
+			 {
+			 ?>
+			 <form action="http://localhost/boliche/index.php/Boliche/subirfoto" method="POST" enctype="multipart/form-data">
+			<fieldset>
+				<legend>SUBIR UNA FOTO</legend>
+				foto:<input type="file" name="foto"/><br/>
+				fecha:<input type="date" name="fecha"/><br/>
+				<input type="submit" name="enviar" value="enviar"/>
+				
+			</fieldset>
+			 
+			
+			</form>
+			 <?php	
+			 }
+			 
+			?>
 			</div>			
 	</body>
 </html>

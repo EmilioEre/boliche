@@ -94,7 +94,7 @@ class Boliche extends CI_Controller {
 			{
 				$this->session->set_userdata('nombre',$resultado->row()->usuario);
 				$datos['alerta']="BIENVENIDO:".$resultado->row()->usuario;
-				
+				$datos['activar']=1;
 				//si entra aqui es porque existe el usuario
 			}			
 			else
@@ -105,6 +105,18 @@ class Boliche extends CI_Controller {
 			
 		}
 		$this->load->view('login',$datos);
+	}
+	public function subirfoto ()
+	{
+		$nombre=$_FILES['foto']['name'];
+		copy($_FILES['foto']['tmp_name'],"fotos/".$nombre);//copia la foto
+		$datos=array(
+			'nombre_archivo'=>$nombre,
+			'idpersona'=>1,
+			'fecha'=>$this->input->post('fecha'),		
+			);
+			$this->boliche_modelo->insertarfoto($datos);
+			redirect("index.php/Boliche/fotos");
 	}
 }
 
