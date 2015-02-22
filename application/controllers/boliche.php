@@ -21,9 +21,32 @@ class Boliche extends CI_Controller {
 	{
 		$this->load->view('bandeja');
 	}
-		public function vermas()
+	public function novedad()
 	{
-		$this->load->view('welcome_message');
+		$this->load->view('novedad');
+	}
+	public function shows()
+	{
+		$this->load->view('shows');
+	}
+	public function fotos()
+	{
+		$datos=array(
+		'fotos'=>$this->boliche_modelo->traerfotos(),
+		);
+		$this->load->view('fotos',$datos);
+	}
+	public function ubicacion()
+	{
+		$this->load->view('ubicacion');
+	}
+	public function contacto()
+	{
+		$this->load->view('contacto');
+	}
+	public function login()
+	{
+		$this->load->view('login');
 	}
 }
 

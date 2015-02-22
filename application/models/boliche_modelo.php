@@ -17,4 +17,11 @@ class Boliche_modelo extends CI_Model {
 		return $this->db->get_where('login',$datos);
 		
 	}
+	public function traerfotos ()
+	{
+		//funcion que buscara la foto de la base de datos y las devolvera al controlador
+		$consulta=$this->db->query("select * from foto");
+		return $consulta;
+		}
+	
 }

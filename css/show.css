@@ -1,0 +1,14 @@
+img{
+	width:300px;
+	float: left;
+	margin-right:10px;
+	margin-bottom:10px
+}
+body{
+	text-align:center;
+}
+#contenedor
+{
+ width:1000px;
+ margin:0 auto;
+}
