@@ -77,7 +77,34 @@ class Boliche extends CI_Controller {
 	}
 	public function login() 
 	{
-		$this->load->view('login');
+		$datos['alerta']="";
+		if($_POST)
+		
+		{
+			//estoy por insertar
+			$datos=array(
+			'usuario'=>$this->input->post('usuario'),
+			'clave'=>$this->input->post('clave'),
+			
+			);
+			//llamo a la funcion para buscar el usuario
+			$resultado=$this->boliche_modelo->buscausuario($datos);
+			//verifico si existe el usuario
+			if($resultado->result())
+			{
+				$this->session->set_userdata('nombre',$resultado->row()->usuario);
+				$datos['alerta']="BIENVENIDO:".$resultado->row()->usuario;
+				
+				//si entra aqui es porque existe el usuario
+			}			
+			else
+			{
+				//si entra aqui no existe el usuario
+				$datos['alerta']="NO EXISTE EL USUARIO. REGISTRESE";
+			}
+			
+		}
+		$this->load->view('login',$datos);
 	}
 }
 

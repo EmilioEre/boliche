@@ -28,4 +28,14 @@ class Boliche_modelo extends CI_Model {
 		//funcion que inserta un mensaje de un usuario en la tabla contacto
 		$this->db->insert('contacto',$informacion);
 	}
+	public function buscausuario ($datosRecibidos)
+	{
+		$datos=array(
+		'usuario'=>$datosRecibidos['usuario'],
+		'clave'=>$datosRecibidos['clave'],
+		);
+		return $this->db->get_where('login',$datos);
+		//funcion que buscara un usuario y devolvera su informacion
+		
+	}
 }
