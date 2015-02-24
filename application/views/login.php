@@ -15,7 +15,7 @@
 				<input type="text" name="usuario"/><br/>
 				<label for="clave">Clave</label>
 				<input type="text" name="clave"/><br/>
-				<input type="submit" name="enviar" value="enviar"/>
+				<input type="submit" name="Ingresar" value="Ingresar"/>
 				
 			</fieldset>
 			<span>			
@@ -34,7 +34,7 @@
 				<legend>SUBIR UNA FOTO</legend>
 				foto:<input type="file" name="foto"/><br/>
 				fecha:<input type="date" name="fecha"/><br/>
-				<input type="submit" name="enviar" value="enviar"/>
+				<input type="submit" name="Subir" value="Subir"/>
 				
 			</fieldset>
 			 
